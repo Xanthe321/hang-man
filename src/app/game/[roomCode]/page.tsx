@@ -15,6 +15,9 @@ interface GameState {
   category: string;
 }
 
+const SOCKET_URL =
+  process.env.NEXT_PUBLIC_SOCKET_URL || "http://localhost:3002";
+
 export default function GameRoom() {
   const params = useParams();
   const searchParams = useSearchParams();
@@ -32,7 +35,7 @@ export default function GameRoom() {
   } | null>(null);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3002", {
+    const newSocket = io(SOCKET_URL, {
       query: {
         roomCode,
         playerName,
