@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { io, Socket } from "socket.io-client";
 import { useParams, useSearchParams } from "next/navigation";
-import Hangman from "@/components/Hangman";
+import Hangman from "../../../components/Hangman";
 
 interface GameState {
   currentPlayer: string;
@@ -30,7 +30,7 @@ export default function GameRoom() {
   const [players, setPlayers] = useState<string[]>([]);
   const [connectionStatus, setConnectionStatus] = useState("Bağlanıyor...");
 
-  console.log(connectionStatus)
+  console.log(connectionStatus);
   const [gameOver, setGameOver] = useState<{
     scores: Record<string, number>;
     winner: string;

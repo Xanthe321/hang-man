@@ -1,6 +1,6 @@
 import { Server } from 'socket.io'
 import { createServer } from 'http'
-import { WORD_CATEGORIES } from '../src/data/words'
+import { WORD_CATEGORIES } from '../frontend/src/data/words'
 
 const httpServer = createServer()
 const io = new Server(httpServer, {
