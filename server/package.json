@@ -1,0 +1,21 @@
+{
+  "name": "hangman-server",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist/server/index.js",
+    "dev": "ts-node index.ts"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.1"
+  }
+} 
