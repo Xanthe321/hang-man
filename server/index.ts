@@ -30,9 +30,7 @@ const rooms = new Map<string, string[]>()
 io.on('connection', (socket) => {
   const roomCode = socket.handshake.query.roomCode as string
   const playerName = socket.handshake.query.playerName as string
-  const isHost = socket.handshake.query.isHost === 'true'
 
-  console.log(`Yeni bağlantı: ${playerName} - Oda: ${roomCode} - Host: ${isHost}`)
 
   if (!roomCode || !playerName) {
     console.log('RoomCode veya PlayerName eksik')
