@@ -29,6 +29,8 @@ export default function GameRoom() {
   const [gameState, setGameState] = useState<GameState | null>(null);
   const [players, setPlayers] = useState<string[]>([]);
   const [connectionStatus, setConnectionStatus] = useState("Bağlanıyor...");
+
+  console.log(connectionStatus)
   const [gameOver, setGameOver] = useState<{
     scores: Record<string, number>;
     winner: string;
