@@ -1,6 +1,6 @@
 import { Server } from 'socket.io'
 import { createServer } from 'http'
-import { WORD_CATEGORIES } from './data/words'
+import { getRandomWord } from './data/words'
 
 const httpServer = createServer()
 const io = new Server(httpServer, {
@@ -26,11 +26,6 @@ interface GameState {
 
 const games = new Map<string, GameState>()
 const rooms = new Map<string, string[]>()
-
-const getRandomWord = (category: string): string => {
-  const words = WORD_CATEGORIES[category]
-  return words[Math.floor(Math.random() * words.length)]
-}
 
 io.on('connection', (socket) => {
   const roomCode = socket.handshake.query.roomCode as string
