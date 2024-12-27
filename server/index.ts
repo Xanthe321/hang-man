@@ -5,12 +5,14 @@ import { getRandomWord } from './data/words'
 const httpServer = createServer()
 const io = new Server(httpServer, {
   cors: {
-    origin: "*",
+    origin: ["https://adamasmacaoyunu.store", "http://localhost:3000"],
     methods: ["GET", "POST"],
     credentials: true,
     allowedHeaders: ["my-custom-header"],
   },
-  transports: ['websocket', 'polling']
+  transports: ['websocket', 'polling'],
+  allowEIO3: true,
+  pingTimeout: 60000,
 })
 
 interface GameState {
